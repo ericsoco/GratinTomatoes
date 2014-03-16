@@ -7,13 +7,21 @@
 //
 
 #import "AppDelegate.h"
+#import "MovieListViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+	
     // Override point for customization after application launch.
+	UIViewController *movieListViewController = [[MovieListViewController alloc] init];
+	movieListViewController.title = @"Gratin Tomatoes";
+	
+	UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:movieListViewController];
+	self.window.rootViewController = navigationController;
+	
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
