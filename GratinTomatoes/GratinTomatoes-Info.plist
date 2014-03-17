@@ -28,6 +28,35 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Aller_Bd.ttf</string>
+		<string>Aller_BdIt.ttf</string>
+		<string>Aller_It.ttf</string>
+		<string>Aller_Lt.ttf</string>
+		<string>Aller_LtIt.ttf</string>
+		<string>Aller_Rg.ttf</string>
+		<string>AllerDisplay.ttf</string>
+	</array>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
+	<key>IBCustomFonts</key>
+	<dict>
+		<key>Arial</key>
+		<string>Aller-Bold</string>
+		<key>Aller Bold Italic</key>
+		<string>Aller-BoldItalic</string>
+		<key>Aller Italic</key>
+		<string>Aller-Italic</string>
+		<key>Aller Light</key>
+		<string>Aller-Light</string>
+		<key>Aller Light Italic</key>
+		<string>Aller-LightItalic</string>
+		<key>Aller</key>
+		<string>Aller</string>
+		<key>Aller Display</key>
+		<string>AllerDisplay</string>
+	</dict>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

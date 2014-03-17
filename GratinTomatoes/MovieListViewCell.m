@@ -14,6 +14,9 @@
 - (void)awakeFromNib
 {
     // Initialization code
+	self.titleLabel.font = [UIFont fontWithName:@"Aller-Bold" size:20];
+	self.synopsisLabel.font = [UIFont fontWithName:@"Aller-Light" size:13];
+	self.castLabel.font = [UIFont fontWithName:@"Aller-LightItalic" size:13];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

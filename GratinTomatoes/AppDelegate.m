@@ -22,6 +22,17 @@
 	UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:movieListViewController];
 	self.window.rootViewController = navigationController;
 	
+	
+	/*
+	// Dump font families/names
+	for (NSString* family in [UIFont familyNames]) {
+		NSLog(@"%@", family);
+		for (NSString* name in [UIFont fontNamesForFamilyName: family]) {
+			NSLog(@"  %@", name);
+		}
+	}
+	*/
+	
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

@@ -48,3 +48,33 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 2
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 0
 
+// HexColors
+#define COCOAPODS_POD_AVAILABLE_HexColors
+#define COCOAPODS_VERSION_MAJOR_HexColors 2
+#define COCOAPODS_VERSION_MINOR_HexColors 2
+#define COCOAPODS_VERSION_PATCH_HexColors 1
+
+// IBCustomFonts
+#define COCOAPODS_POD_AVAILABLE_IBCustomFonts
+#define COCOAPODS_VERSION_MAJOR_IBCustomFonts 0
+#define COCOAPODS_VERSION_MINOR_IBCustomFonts 0
+#define COCOAPODS_VERSION_PATCH_IBCustomFonts 1
+
+// SKBounceAnimation
+#define COCOAPODS_POD_AVAILABLE_SKBounceAnimation
+#define COCOAPODS_VERSION_MAJOR_SKBounceAnimation 1
+#define COCOAPODS_VERSION_MINOR_SKBounceAnimation 0
+#define COCOAPODS_VERSION_PATCH_SKBounceAnimation 4
+
+// TSMessages
+#define COCOAPODS_POD_AVAILABLE_TSMessages
+#define COCOAPODS_VERSION_MAJOR_TSMessages 0
+#define COCOAPODS_VERSION_MINOR_TSMessages 9
+#define COCOAPODS_VERSION_PATCH_TSMessages 6
+
+// ZAActivityBar
+#define COCOAPODS_POD_AVAILABLE_ZAActivityBar
+#define COCOAPODS_VERSION_MAJOR_ZAActivityBar 0
+#define COCOAPODS_VERSION_MINOR_ZAActivityBar 1
+#define COCOAPODS_VERSION_PATCH_ZAActivityBar 1
+

@@ -9,6 +9,31 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-HexColors.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-IBCustomFonts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SKBounceAnimation.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-TSMessages.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ZAActivityBar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1AF1AAD75C444C95B372C59E</key>
+		<key>102F4B5F9C0545FFB8FCA654</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5E745F39CF60477FAF28975C</key>
+		<key>3329B5DB0FF4434490F22726</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>802D2476D98A41599A571008</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A513E56E753C4608A1541C7A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A526F883E9544EA085CCC43F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B6466D2E3D6D4FB2B3874DD8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D8B653FBDA8F42BA98008A3A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

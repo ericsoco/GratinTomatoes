@@ -18,11 +18,26 @@ PODS:
   - AFNetworking/UIKit (2.2.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - HexColors (2.2.1)
+  - IBCustomFonts (0.0.1)
+  - SKBounceAnimation (1.0.04)
+  - TSMessages (0.9.6):
+    - HexColors
+  - ZAActivityBar (0.1.1):
+    - SKBounceAnimation (~> 1.0)
 
 DEPENDENCIES:
   - AFNetworking
+  - IBCustomFonts (~> 0.0)
+  - TSMessages
+  - ZAActivityBar (~> 0.1.1)
 
 SPEC CHECKSUMS:
   AFNetworking: e8cfd8f3fe3bfe19124a0cc63f4d45752d892a56
+  HexColors: 3a68db077cd6572a8f7d4aa1add284dd2436a934
+  IBCustomFonts: 8277903d85ef44e62a9fd35cab12a3457c3b0bfd
+  SKBounceAnimation: 1d53d07c3496c1f61015e9d93bbaefda8391dc0d
+  TSMessages: 839edc3164b99ced48c30af9dde9710cd67bea4d
+  ZAActivityBar: 709b333891ee822d80fda8f641030f586e02735f
 
 COCOAPODS: 0.29.0

@@ -26,6 +26,15 @@
 		CAAC802618D4D8D300675F4B /* MovieListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAAC802418D4D8D300675F4B /* MovieListViewCell.xib */; };
 		CAAC802A18D4DCE000675F4B /* MovieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAC802818D4DCE000675F4B /* MovieDetailViewController.m */; };
 		CAAC802B18D4DCE000675F4B /* MovieDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAAC802918D4DCE000675F4B /* MovieDetailViewController.xib */; };
+		CAAC803418D60A0200675F4B /* Aller_Bd.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAAC802D18D60A0200675F4B /* Aller_Bd.ttf */; };
+		CAAC803518D60A0200675F4B /* Aller_BdIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAAC802E18D60A0200675F4B /* Aller_BdIt.ttf */; };
+		CAAC803618D60A0200675F4B /* Aller_It.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAAC802F18D60A0200675F4B /* Aller_It.ttf */; };
+		CAAC803718D60A0200675F4B /* Aller_Lt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAAC803018D60A0200675F4B /* Aller_Lt.ttf */; };
+		CAAC803818D60A0200675F4B /* Aller_LtIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAAC803118D60A0200675F4B /* Aller_LtIt.ttf */; };
+		CAAC803918D60A0200675F4B /* Aller_Rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAAC803218D60A0200675F4B /* Aller_Rg.ttf */; };
+		CAAC803A18D60A0200675F4B /* AllerDisplay.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAAC803318D60A0200675F4B /* AllerDisplay.ttf */; };
+		CAAC803D18D60D9F00675F4B /* UIFont+IBCustomFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAC803C18D60D9F00675F4B /* UIFont+IBCustomFonts.m */; };
+		CAEEBF2A18D614870029C8D0 /* MovieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEEBF2918D614870029C8D0 /* MovieModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +75,16 @@
 		CAAC802718D4DCE000675F4B /* MovieDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieDetailViewController.h; sourceTree = "<group>"; };
 		CAAC802818D4DCE000675F4B /* MovieDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDetailViewController.m; sourceTree = "<group>"; };
 		CAAC802918D4DCE000675F4B /* MovieDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieDetailViewController.xib; sourceTree = "<group>"; };
+		CAAC802D18D60A0200675F4B /* Aller_Bd.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aller_Bd.ttf; sourceTree = "<group>"; };
+		CAAC802E18D60A0200675F4B /* Aller_BdIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aller_BdIt.ttf; sourceTree = "<group>"; };
+		CAAC802F18D60A0200675F4B /* Aller_It.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aller_It.ttf; sourceTree = "<group>"; };
+		CAAC803018D60A0200675F4B /* Aller_Lt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aller_Lt.ttf; sourceTree = "<group>"; };
+		CAAC803118D60A0200675F4B /* Aller_LtIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aller_LtIt.ttf; sourceTree = "<group>"; };
+		CAAC803218D60A0200675F4B /* Aller_Rg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aller_Rg.ttf; sourceTree = "<group>"; };
+		CAAC803318D60A0200675F4B /* AllerDisplay.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AllerDisplay.ttf; sourceTree = "<group>"; };
+		CAAC803C18D60D9F00675F4B /* UIFont+IBCustomFonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+IBCustomFonts.m"; sourceTree = "<group>"; };
+		CAEEBF2818D614870029C8D0 /* MovieModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieModel.h; sourceTree = "<group>"; };
+		CAEEBF2918D614870029C8D0 /* MovieModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +147,8 @@
 		CA0300C518D178CA000406C6 /* GratinTomatoes */ = {
 			isa = PBXGroup;
 			children = (
+				CAAC803B18D60D9100675F4B /* libs */,
+				CAAC802C18D60A0200675F4B /* resources */,
 				CAAC802118D4CB6200675F4B /* view */,
 				CAAC800F18D4C7E000675F4B /* model */,
 				CA0300EE18D178DF000406C6 /* controller */,
@@ -184,6 +205,8 @@
 		CAAC800F18D4C7E000675F4B /* model */ = {
 			isa = PBXGroup;
 			children = (
+				CAEEBF2818D614870029C8D0 /* MovieModel.h */,
+				CAEEBF2918D614870029C8D0 /* MovieModel.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -196,6 +219,28 @@
 				CAAC802418D4D8D300675F4B /* MovieListViewCell.xib */,
 			);
 			name = view;
+			sourceTree = "<group>";
+		};
+		CAAC802C18D60A0200675F4B /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				CAAC802D18D60A0200675F4B /* Aller_Bd.ttf */,
+				CAAC802E18D60A0200675F4B /* Aller_BdIt.ttf */,
+				CAAC802F18D60A0200675F4B /* Aller_It.ttf */,
+				CAAC803018D60A0200675F4B /* Aller_Lt.ttf */,
+				CAAC803118D60A0200675F4B /* Aller_LtIt.ttf */,
+				CAAC803218D60A0200675F4B /* Aller_Rg.ttf */,
+				CAAC803318D60A0200675F4B /* AllerDisplay.ttf */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		CAAC803B18D60D9100675F4B /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				CAAC803C18D60D9F00675F4B /* UIFont+IBCustomFonts.m */,
+			);
+			name = libs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,9 +321,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAAC802B18D4DCE000675F4B /* MovieDetailViewController.xib in Resources */,
+				CAAC803718D60A0200675F4B /* Aller_Lt.ttf in Resources */,
+				CAAC803518D60A0200675F4B /* Aller_BdIt.ttf in Resources */,
+				CAAC803418D60A0200675F4B /* Aller_Bd.ttf in Resources */,
+				CAAC803918D60A0200675F4B /* Aller_Rg.ttf in Resources */,
 				CAAC801418D4C8EA00675F4B /* MovieListViewController.xib in Resources */,
+				CAAC803A18D60A0200675F4B /* AllerDisplay.ttf in Resources */,
+				CAAC803618D60A0200675F4B /* Aller_It.ttf in Resources */,
 				CAAC802618D4D8D300675F4B /* MovieListViewCell.xib in Resources */,
 				CA0300CA18D178CA000406C6 /* InfoPlist.strings in Resources */,
+				CAAC803818D60A0200675F4B /* Aller_LtIt.ttf in Resources */,
 				CA0300D218D178CA000406C6 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,9 +385,11 @@
 			files = (
 				CA0300D018D178CA000406C6 /* AppDelegate.m in Sources */,
 				CAAC801318D4C8EA00675F4B /* MovieListViewController.m in Sources */,
+				CAEEBF2A18D614870029C8D0 /* MovieModel.m in Sources */,
 				CAAC802A18D4DCE000675F4B /* MovieDetailViewController.m in Sources */,
 				CA0300CC18D178CA000406C6 /* main.m in Sources */,
 				CAAC802518D4D8D300675F4B /* MovieListViewCell.m in Sources */,
+				CAAC803D18D60D9F00675F4B /* UIFont+IBCustomFonts.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

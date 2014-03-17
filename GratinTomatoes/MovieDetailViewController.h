@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MovieModel.h"
 
 @interface MovieDetailViewController : UIViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil movieModel:(MovieModel *)movieModel;
 
 @end

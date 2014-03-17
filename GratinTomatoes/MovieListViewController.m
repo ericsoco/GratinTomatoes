@@ -10,6 +10,9 @@
 #import "MovieDetailViewController.h"
 #import "MovieListViewCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "MovieModel.h"
+#import "ZAActivityBar.h"
+#import "TSMessage.h"
 
 @interface MovieListViewController ()
 
@@ -18,17 +21,30 @@
 @implementation MovieListViewController
 {
 	NSArray *movieListData;
+	NSMutableArray *movieModels;
+	int currPage;
+	BOOL initialError;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	
+	// init ivars
+	movieModels = [NSMutableArray array];
+	currPage = 1;
+//	initialError = YES;
+	
+	// Set back button on NavigationController
+	UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Movies" style:UIBarButtonItemStylePlain target:nil action:nil];
+	self.navigationItem.backBarButtonItem = backButton;
+	
+	// Pull to refresh
+	UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+	refreshControl.tintColor = [UIColor colorWithRed:0.05 green:0.05 blue:0.1 alpha:1];
+	[refreshControl addTarget:self action:@selector(reloadMovieList) forControlEvents:UIControlEventValueChanged];
+	self.refreshControl = refreshControl;
+	
 	
 	// Assign MovieListViewCell as the UITableViewCell subclass to use in this table view
 	UINib *cellNib = [UINib nibWithNibName:@"MovieListViewCell" bundle:nil];
@@ -37,13 +53,16 @@
 	// Hide tableView until data loaded.
 	self.tableView.hidden = YES;
 	
-	
-	[self loadMovieListForPage:1];
+	[self loadMovieListForPage:currPage];
 	
 }
 
 - (void)loadMovieListForPage:(int)pageNum
 {
+	
+	// Show loading notification
+	[ZAActivityBar showWithStatus:@"Loading movies from Rotten Tomatoes..."];
+	
 	// build API request URL
 	NSString *baseUrl = @"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json";
 	NSString *apiKey = @"apikey=s9jt5e3aa4dcfneu7sx2yhug";
@@ -55,21 +74,65 @@
 	
 	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
 	[NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+		if (connectionError) {
+			[TSMessage showNotificationWithTitle:@"Network Error" subtitle:@"Please check your connection. Pull down to reload movies." type:TSMessageNotificationTypeWarningGrey];
+			self.tableView.hidden = NO;
+			return;
+		}
+		
 		id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-//		NSLog(@"%@", object);
+		
+		// Test error state
+		if (initialError) {
+			object = [NSArray array];
+			initialError = NO;
+		}
+		
 		if ([object isKindOfClass:[NSDictionary class]]) {
 			movieListData = ((NSDictionary *)object)[@"movies"];
-//			NSLog(@"Received movies: %@", movieListData);
-//			NSArray *keys = [movieListData allKeys];
-//			NSLog(@"allKeys:%@", keys);
+			
+			for (NSDictionary *movieData in movieListData) {
+				[movieModels addObject:[self createMovieModelFromData:movieData]];
+			}
 		} else {
-			// TODO: handle error
+			[ZAActivityBar showErrorWithStatus:@"Something went wrong. Please pull down to reload movies."];
+			self.tableView.hidden = NO;
+			return;
 		}
+		
+		// Remove loading notification
+		[ZAActivityBar showSuccessWithStatus:@"Movies loaded."];
 		
 		// Reveal tableView and populate.
 		[self.tableView reloadData];
+		[self.refreshControl endRefreshing];
 		self.tableView.hidden = NO;
 	}];
+}
+
+- (MovieModel *)createMovieModelFromData:(NSDictionary *)movieData
+{
+	MovieModel *movieModel = [[MovieModel alloc] init];
+	
+	movieModel.title = movieData[@"title"];
+	movieModel.synopsis = movieData[@"synopsis"];
+	movieModel.posterThumbUrl = ((NSDictionary *)movieData[@"posters"])[@"detailed"];
+	movieModel.posterUrl = ((NSDictionary *)movieData[@"posters"])[@"original"];
+	
+	NSArray *castListData = movieData[@"abridged_cast"];
+	NSMutableArray *castNames = [NSMutableArray array];
+	for (NSDictionary *castData in castListData) {
+		[castNames addObject:castData[@"name"]];
+	}
+	movieModel.cast = [castNames componentsJoinedByString:@", "];
+	
+	return movieModel;
+}
+
+- (void) reloadMovieList {
+	NSLog(@"reloading...");
+	[self loadMovieListForPage:currPage];
+	[self.refreshControl endRefreshing];
 }
 
 - (void)didReceiveMemoryWarning
@@ -104,25 +167,33 @@
     MovieListViewCell *cell = (MovieListViewCell *)[self.tableView dequeueReusableCellWithIdentifier:@"MovieListViewCell" forIndexPath:indexPath];
 	if (!movieListData) { return cell; }
 	
-	// TODO: move this stuff to MovieModel, instantiated and populated in loadMovieForListPage:pageNum
-	NSDictionary *movieData = [movieListData objectAtIndex:[indexPath row]];
 	
-	NSString *title = movieData[@"title"];
-	NSString *synopsis = movieData[@"synopsis"];
-	NSString *posterUrl = ((NSDictionary *)movieData[@"posters"])[@"detailed"];
+	// SUNDAY:
+	// pass MovieModel to MovieDetailViewController on tap
+	// also: load image only once, and store as MovieModel.poster(Thumb)Image (in createMovieModelFromData:movieData)
+	// should also pass MovieModel to each MovieListViewCell and let that subview populate itself.
 	
-	NSArray *castListData = movieData[@"abridged_cast"];
-	NSMutableArray *castNames = [NSMutableArray array];
-	for (NSDictionary *castData in castListData) {
-		[castNames addObject:castData[@"name"]];
-	}
-	NSString *cast = [castNames componentsJoinedByString:@", "];
-
-	cell.titleLabel.text = title;
-	cell.synopsisLabel.text = synopsis;
-	cell.castLabel.text = cast;
-	[cell.posterImage setImageWithURL:[NSURL URLWithString:posterUrl]]; //placeholderImage:[UIImage imageNamed:@"placeholder-avatar"]];
 	
+	MovieModel *movieModel = [movieModels objectAtIndex:[indexPath row]];
+	
+	cell.titleLabel.text = movieModel.title;
+	cell.synopsisLabel.text = movieModel.synopsis;
+	cell.castLabel.text = movieModel.cast;
+	
+	// TODO: move the image loading logic into MovieModel,
+	// and set the image only if !cell.posterImage (tho maybe it always is when dequeuing a new cell?)
+	// http://stackoverflow.com/questions/17730138/uiimageviewafnetworking-setimagewithurl-with-animation
+	[cell.posterImage setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:movieModel.posterThumbUrl]]
+			  placeholderImage:nil//[UIImage imageNamed:@"placeholder-avatar"]
+					   success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+						   cell.posterImage.alpha = 0.0;
+						   cell.posterImage.image = image;
+						   [UIView animateWithDuration:0.35
+											animations:^{
+												cell.posterImage.alpha = 1.0;
+											}];
+					   }
+					   failure:NULL];
     
     return cell;
 }
@@ -170,14 +241,10 @@
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-    MovieDetailViewController *movieDetailViewController = [[MovieDetailViewController alloc] initWithNibName:@"MovieDetailViewController" bundle:nil];
-    
-    // Pass the selected object to the new view controller.
-    
-    // Push the view controller.
-    [self.navigationController pushViewController:movieDetailViewController animated:YES];
+	MovieDetailViewController *movieDetailViewController = [[MovieDetailViewController alloc] initWithNibName:@"MovieDetailViewController" bundle:nil movieModel:[movieModels objectAtIndex:[indexPath row]]];
+
+	// Push the view controller.
+	[self.navigationController pushViewController:movieDetailViewController animated:YES];
 }
 
 @end
