@@ -35,6 +35,8 @@
 		CAAC803A18D60A0200675F4B /* AllerDisplay.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAAC803318D60A0200675F4B /* AllerDisplay.ttf */; };
 		CAAC803D18D60D9F00675F4B /* UIFont+IBCustomFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAC803C18D60D9F00675F4B /* UIFont+IBCustomFonts.m */; };
 		CAEEBF2A18D614870029C8D0 /* MovieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEEBF2918D614870029C8D0 /* MovieModel.m */; };
+		CAEEBF2F18D6CDDA0029C8D0 /* dvd.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEEBF2D18D6CDDA0029C8D0 /* dvd.png */; };
+		CAEEBF3018D6CDDA0029C8D0 /* ticket.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEEBF2E18D6CDDA0029C8D0 /* ticket.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		CAAC803C18D60D9F00675F4B /* UIFont+IBCustomFonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+IBCustomFonts.m"; sourceTree = "<group>"; };
 		CAEEBF2818D614870029C8D0 /* MovieModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieModel.h; sourceTree = "<group>"; };
 		CAEEBF2918D614870029C8D0 /* MovieModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieModel.m; sourceTree = "<group>"; };
+		CAEEBF2D18D6CDDA0029C8D0 /* dvd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dvd.png; sourceTree = "<group>"; };
+		CAEEBF2E18D6CDDA0029C8D0 /* ticket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ticket.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,13 +228,8 @@
 		CAAC802C18D60A0200675F4B /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				CAAC802D18D60A0200675F4B /* Aller_Bd.ttf */,
-				CAAC802E18D60A0200675F4B /* Aller_BdIt.ttf */,
-				CAAC802F18D60A0200675F4B /* Aller_It.ttf */,
-				CAAC803018D60A0200675F4B /* Aller_Lt.ttf */,
-				CAAC803118D60A0200675F4B /* Aller_LtIt.ttf */,
-				CAAC803218D60A0200675F4B /* Aller_Rg.ttf */,
-				CAAC803318D60A0200675F4B /* AllerDisplay.ttf */,
+				CAEEBF2C18D6CDC10029C8D0 /* images */,
+				CAEEBF2B18D6CDA40029C8D0 /* fonts */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -241,6 +240,29 @@
 				CAAC803C18D60D9F00675F4B /* UIFont+IBCustomFonts.m */,
 			);
 			name = libs;
+			sourceTree = "<group>";
+		};
+		CAEEBF2B18D6CDA40029C8D0 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CAAC802D18D60A0200675F4B /* Aller_Bd.ttf */,
+				CAAC802E18D60A0200675F4B /* Aller_BdIt.ttf */,
+				CAAC802F18D60A0200675F4B /* Aller_It.ttf */,
+				CAAC803018D60A0200675F4B /* Aller_Lt.ttf */,
+				CAAC803118D60A0200675F4B /* Aller_LtIt.ttf */,
+				CAAC803218D60A0200675F4B /* Aller_Rg.ttf */,
+				CAAC803318D60A0200675F4B /* AllerDisplay.ttf */,
+			);
+			name = fonts;
+			sourceTree = "<group>";
+		};
+		CAEEBF2C18D6CDC10029C8D0 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				CAEEBF2D18D6CDDA0029C8D0 /* dvd.png */,
+				CAEEBF2E18D6CDDA0029C8D0 /* ticket.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,12 +344,14 @@
 			files = (
 				CAAC802B18D4DCE000675F4B /* MovieDetailViewController.xib in Resources */,
 				CAAC803718D60A0200675F4B /* Aller_Lt.ttf in Resources */,
+				CAEEBF2F18D6CDDA0029C8D0 /* dvd.png in Resources */,
 				CAAC803518D60A0200675F4B /* Aller_BdIt.ttf in Resources */,
 				CAAC803418D60A0200675F4B /* Aller_Bd.ttf in Resources */,
 				CAAC803918D60A0200675F4B /* Aller_Rg.ttf in Resources */,
 				CAAC801418D4C8EA00675F4B /* MovieListViewController.xib in Resources */,
 				CAAC803A18D60A0200675F4B /* AllerDisplay.ttf in Resources */,
 				CAAC803618D60A0200675F4B /* Aller_It.ttf in Resources */,
+				CAEEBF3018D6CDDA0029C8D0 /* ticket.png in Resources */,
 				CAAC802618D4D8D300675F4B /* MovieListViewCell.xib in Resources */,
 				CA0300CA18D178CA000406C6 /* InfoPlist.strings in Resources */,
 				CAAC803818D60A0200675F4B /* Aller_LtIt.ttf in Resources */,

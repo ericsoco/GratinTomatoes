@@ -10,4 +10,6 @@
 
 @interface MovieListViewController : UITableViewController
 
+@property (strong, nonatomic) NSString *baseUrl;
+
 @end

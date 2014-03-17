@@ -11,6 +11,8 @@
 #import "UIImageView+AFNetworking.h"
 
 @interface MovieDetailViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *synopsisTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *castTitleLabel;
 
 @property (weak, nonatomic) IBOutlet UIImageView *posterImage;
 @property (weak, nonatomic) IBOutlet UILabel *synopsisLabel;
@@ -48,7 +50,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	
     // Do any additional setup after loading the view from its nib.
+	
+	self.synopsisTitleLabel.font = [UIFont fontWithName:@"Aller" size:13];
+	self.castTitleLabel.font = [UIFont fontWithName:@"Aller" size:13];
+	self.synopsisLabel.font = [UIFont fontWithName:@"Aller-Light" size:12];
+	self.castLabel.font = [UIFont fontWithName:@"Aller-Light" size:12];
 }
 
 - (void) viewWillAppear:(BOOL)animated {

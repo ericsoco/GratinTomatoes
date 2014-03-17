@@ -7,8 +7,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieDetailViewController">
             <connections>
                 <outlet property="castLabel" destination="sTr-fq-zqz" id="DdK-h3-4kj"/>
+                <outlet property="castTitleLabel" destination="4hS-xf-luk" id="BfM-dx-hk6"/>
                 <outlet property="posterImage" destination="h3J-Mz-Hz4" id="G0x-2C-Mcf"/>
                 <outlet property="synopsisLabel" destination="bBb-R2-f5y" id="8Dg-m9-ynY"/>
+                <outlet property="synopsisTitleLabel" destination="T09-nZ-aw6" id="rbU-VX-MtW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -33,20 +35,20 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="bBb-R2-f5y">
-                            <rect key="frame" x="20" y="49" width="280" height="162"/>
+                            <rect key="frame" x="20" y="49" width="280" height="104"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <string key="text">Long movie description goes here and may have multiple lines possibly up to three Long movie description goes here and may have multiple lines possibly up to three Long movie description goes here and may have multiple lines possibly up to three</string>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cast" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hS-xf-luk">
-                            <rect key="frame" x="20" y="219" width="280" height="21"/>
+                            <rect key="frame" x="20" y="161" width="280" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="sTr-fq-zqz">
-                            <rect key="frame" x="20" y="238" width="280" height="30"/>
+                            <rect key="frame" x="20" y="190" width="280" height="36"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <nil key="highlightedColor"/>

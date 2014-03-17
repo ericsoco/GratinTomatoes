@@ -16,12 +16,35 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	
     // Override point for customization after application launch.
-	UIViewController *movieListViewController = [[MovieListViewController alloc] init];
-	movieListViewController.title = @"Gratin Tomatoes";
 	
-	UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:movieListViewController];
-	self.window.rootViewController = navigationController;
+	// In Theaters tab
+	MovieListViewController *inTheatersViewController = [[MovieListViewController alloc] init];
+	inTheatersViewController.title = @"In Theaters";
+	inTheatersViewController.baseUrl = @"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json";
+	UINavigationController *inTheatersNavController = [[UINavigationController alloc] initWithRootViewController:inTheatersViewController];
+	inTheatersNavController.tabBarItem.image = [UIImage imageNamed:@"ticket.png"];
 	
+	// Current DVDs tab
+	MovieListViewController *currentDVDsViewController = [[MovieListViewController alloc] init];
+	currentDVDsViewController.title = @"DVDs";
+	currentDVDsViewController.baseUrl = @"http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/current_releases.json";
+	UINavigationController *currentDVDsNavController = [[UINavigationController alloc] initWithRootViewController:currentDVDsViewController];
+	currentDVDsNavController.tabBarItem.image = [UIImage imageNamed:@"dvd.png"];
+	
+	// Set up tab controller
+	UITabBarController *tabBarController = [[UITabBarController alloc] init];
+	self.window.rootViewController = tabBarController;
+	tabBarController.viewControllers = @[inTheatersNavController, currentDVDsNavController];
+	
+	// Set font for all UINavigationBar titles
+	NSMutableDictionary *titleBarAttributes = [NSMutableDictionary dictionaryWithDictionary: [[UINavigationBar appearance] titleTextAttributes]];
+	[titleBarAttributes setValue:[UIFont fontWithName:@"Aller-Bold" size:16] forKey:NSFontAttributeName];
+	[[UINavigationBar appearance] setTitleTextAttributes:titleBarAttributes];
+	
+	// Set font for all UINavigationBar buttons
+	NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithDictionary: [[UIBarButtonItem appearance] titleTextAttributesForState:UIControlStateNormal]];
+	[attributes setValue:[UIFont fontWithName:@"Aller" size:14] forKey:NSFontAttributeName];
+	[[UIBarButtonItem appearance] setTitleTextAttributes:attributes forState:UIControlStateNormal];
 	
 	/*
 	// Dump font families/names

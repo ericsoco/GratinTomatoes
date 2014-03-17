@@ -45,7 +45,6 @@
 	[refreshControl addTarget:self action:@selector(reloadMovieList) forControlEvents:UIControlEventValueChanged];
 	self.refreshControl = refreshControl;
 	
-	
 	// Assign MovieListViewCell as the UITableViewCell subclass to use in this table view
 	UINib *cellNib = [UINib nibWithNibName:@"MovieListViewCell" bundle:nil];
 	[self.tableView registerNib:cellNib forCellReuseIdentifier:@"MovieListViewCell"];
@@ -64,12 +63,11 @@
 	[ZAActivityBar showWithStatus:@"Loading movies from Rotten Tomatoes..."];
 	
 	// build API request URL
-	NSString *baseUrl = @"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json";
 	NSString *apiKey = @"apikey=s9jt5e3aa4dcfneu7sx2yhug";
 	NSString *page = [NSString stringWithFormat:@"page=%d", pageNum];
 	NSString *perPage = [NSString stringWithFormat:@"page_limit=%d", 20];
 	NSString *query = [[NSArray arrayWithObjects:apiKey, page, perPage, nil] componentsJoinedByString:@"&"];
-	NSString *url = [NSString stringWithFormat:@"%@?%@", baseUrl, query];
+	NSString *url = [NSString stringWithFormat:@"%@?%@", self.baseUrl, query];
 	NSLog(@"requesting:%@", url);
 	
 	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
