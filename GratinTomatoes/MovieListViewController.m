@@ -33,7 +33,7 @@
 	// init ivars
 	movieModels = [NSMutableArray array];
 	currPage = 1;
-//	initialError = YES;
+	initialError = NO;
 	
 	// Set back button on NavigationController
 	UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Movies" style:UIBarButtonItemStylePlain target:nil action:nil];
@@ -243,6 +243,10 @@
 
 	// Push the view controller.
 	[self.navigationController pushViewController:movieDetailViewController animated:YES];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+//	NSLog(@"scroll:%f",scrollView.contentOffset.y);
 }
 
 @end
