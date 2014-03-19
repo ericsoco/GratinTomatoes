@@ -34,6 +34,8 @@
 		CAAC803918D60A0200675F4B /* Aller_Rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAAC803218D60A0200675F4B /* Aller_Rg.ttf */; };
 		CAAC803A18D60A0200675F4B /* AllerDisplay.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAAC803318D60A0200675F4B /* AllerDisplay.ttf */; };
 		CAAC803D18D60D9F00675F4B /* UIFont+IBCustomFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAC803C18D60D9F00675F4B /* UIFont+IBCustomFonts.m */; };
+		CACAA80218DA446E00DDBDCD /* dvd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CACAA80018DA446E00DDBDCD /* dvd@2x.png */; };
+		CACAA80318DA446E00DDBDCD /* ticket@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CACAA80118DA446E00DDBDCD /* ticket@2x.png */; };
 		CAEEBF2A18D614870029C8D0 /* MovieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEEBF2918D614870029C8D0 /* MovieModel.m */; };
 		CAEEBF2F18D6CDDA0029C8D0 /* dvd.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEEBF2D18D6CDDA0029C8D0 /* dvd.png */; };
 		CAEEBF3018D6CDDA0029C8D0 /* ticket.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEEBF2E18D6CDDA0029C8D0 /* ticket.png */; };
@@ -85,6 +87,8 @@
 		CAAC803218D60A0200675F4B /* Aller_Rg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aller_Rg.ttf; sourceTree = "<group>"; };
 		CAAC803318D60A0200675F4B /* AllerDisplay.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AllerDisplay.ttf; sourceTree = "<group>"; };
 		CAAC803C18D60D9F00675F4B /* UIFont+IBCustomFonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+IBCustomFonts.m"; sourceTree = "<group>"; };
+		CACAA80018DA446E00DDBDCD /* dvd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dvd@2x.png"; sourceTree = "<group>"; };
+		CACAA80118DA446E00DDBDCD /* ticket@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ticket@2x.png"; sourceTree = "<group>"; };
 		CAEEBF2818D614870029C8D0 /* MovieModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieModel.h; sourceTree = "<group>"; };
 		CAEEBF2918D614870029C8D0 /* MovieModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieModel.m; sourceTree = "<group>"; };
 		CAEEBF2D18D6CDDA0029C8D0 /* dvd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dvd.png; sourceTree = "<group>"; };
@@ -259,6 +263,8 @@
 		CAEEBF2C18D6CDC10029C8D0 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				CACAA80018DA446E00DDBDCD /* dvd@2x.png */,
+				CACAA80118DA446E00DDBDCD /* ticket@2x.png */,
 				CAEEBF2D18D6CDDA0029C8D0 /* dvd.png */,
 				CAEEBF2E18D6CDDA0029C8D0 /* ticket.png */,
 			);
@@ -342,6 +348,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CACAA80218DA446E00DDBDCD /* dvd@2x.png in Resources */,
 				CAAC802B18D4DCE000675F4B /* MovieDetailViewController.xib in Resources */,
 				CAAC803718D60A0200675F4B /* Aller_Lt.ttf in Resources */,
 				CAEEBF2F18D6CDDA0029C8D0 /* dvd.png in Resources */,
@@ -355,6 +362,7 @@
 				CAAC802618D4D8D300675F4B /* MovieListViewCell.xib in Resources */,
 				CA0300CA18D178CA000406C6 /* InfoPlist.strings in Resources */,
 				CAAC803818D60A0200675F4B /* Aller_LtIt.ttf in Resources */,
+				CACAA80318DA446E00DDBDCD /* ticket@2x.png in Resources */,
 				CA0300D218D178CA000406C6 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
